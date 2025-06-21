@@ -1,0 +1,19 @@
+acebot/
+├── src/
+│   ├── main.cpp                    // Entry point
+│   ├── system_init.cpp            // Initialization logic
+│   ├── sensors.cpp                // PIR + ultrasonic sensor handling
+│   ├── motion_logic.cpp           // Threat scoring and state machine
+│   ├── servo_controller.cpp       // Servo movement and patrol logic
+│   ├── alert_handler.cpp          // LED blinking and fault indication
+│   ├── comms.cpp                  // ESP32-CAM comms + OTA
+│
+├── include/
+│   ├── system_init.h
+│   ├── sensors.h
+│   ├── motion_logic.h
+│   ├── servo_controller.h
+│   ├── alert_handler.h
+│   ├── comms.h
+│
+├── platformio.ini or Arduino project
