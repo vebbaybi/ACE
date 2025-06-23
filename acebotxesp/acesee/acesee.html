@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACEBot: Live Camera Feed</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    img {
+      width: auto;
+      max-width: 90vw;
+      max-height: 80vh;
+      border: 4px solid #0af;
+      border-radius: 8px;
+    }
+    .ip-input {
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 6px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 6px 12px;
+      font-size: 1rem;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>ACEBot Live Stream</h1>
+  <div class="ip-input">
+    <input type="text" id="ipAddress" placeholder="Enter ESP32-CAM IP (e.g. 192.168.1.100)">
+    <button onclick="loadStream()">View</button>
+  </div>
+  <img id="videoStream" alt="Video will appear here" style="display:none;">
+  <script>
+    function loadStream() {
+      const ip = document.getElementById("ipAddress").value.trim();
+      if (ip) {
+        const img = document.getElementById("videoStream");
+        img.src = `http://${ip}/stream`;
+        img.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
